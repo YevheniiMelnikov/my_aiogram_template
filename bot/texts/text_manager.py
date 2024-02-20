@@ -41,3 +41,10 @@ class TextManager:
             for key, value in data.items():
                 result[f"{type}.{key}"] = value
         return result
+
+
+resource_manager = TextManager()
+
+
+def translate(key: ResourceType, lang: str | None = "ua") -> str:
+    return resource_manager.get_text(key, lang)
