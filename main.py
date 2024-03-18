@@ -8,14 +8,14 @@ from bot.handlers import main_menu
 from logger import logger
 
 
-async def main():
+async def main() -> None:
     load_dotenv()
-    bot = Bot(token=os.getenv("BOT_TOKEN"))
+    bot = Bot(token=os.getenv("BOT_TOKEN"))  # type: ignore[arg-type]
     dp = Dispatcher()
     dp.include_router(main_menu.start_router)
     logger.info("Starting bot ...")
     await bot.delete_webhook(drop_pending_updates=True)
-    await asyncio.run(dp.start_polling(bot))
+    await dp.start_polling(bot)
 
 
 if __name__ == "__main__":
