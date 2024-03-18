@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import make_transient, sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 from bot.models import Base
 from logger import logger

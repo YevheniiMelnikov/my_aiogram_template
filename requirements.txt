@@ -1,3 +1,8 @@
 aiogram
 PyYAML
 SQLAlchemy
+isort
+black
+mypy
+flake8
+python-dotenv
